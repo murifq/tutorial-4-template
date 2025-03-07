@@ -73,7 +73,7 @@ texture = ExtResource("3_amw32")
 
 [node name="NextLevelArea" parent="Sprite2D" instance=ExtResource("4_xekqs")]
 script = ExtResource("5_yn1rq")
-sceneName = "Level2"
+scene_name = "Level2"
 
 [node name="AreaTrigger" parent="." instance=ExtResource("5_bfxvo")]
 position = Vector2(287, 399)
