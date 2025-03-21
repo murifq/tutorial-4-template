@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8obb106nbhx1"]
+
+[ext_resource type="FontFile" uid="uid://g0e4g4332ft0" path="res://assets/Fonts/Raw/CC Wild Words Roman.ttf" id="1_a6pac"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="2_wkhvb"]
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.537255, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 219.0
+offset_right = 1115.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("1_a6pac")
+theme_override_font_sizes/font_size = 180
+text = "Game Over"
+
+[node name="BackToMenuButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 471.0
+offset_right = 694.0
+offset_bottom = 513.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+script = ExtResource("2_wkhvb")
+
+[node name="PlayAgainButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 419.0
+offset_right = 685.0
+offset_bottom = 461.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Play Again"
+script = ExtResource("2_wkhvb")
+
+[connection signal="pressed" from="BackToMenuButton" to="BackToMenuButton" method="_on_pressed" binds= ["MainMenu"]]
+[connection signal="pressed" from="PlayAgainButton" to="PlayAgainButton" method="_on_pressed" binds= ["PlayAgain"]]

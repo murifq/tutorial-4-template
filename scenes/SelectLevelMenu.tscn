@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4pql53ro4aqb"]
+
+[ext_resource type="FontFile" uid="uid://g0e4g4332ft0" path="res://assets/Fonts/Raw/CC Wild Words Roman.ttf" id="1_k4dil"]
+[ext_resource type="FontFile" uid="uid://cth60gqdxo73p" path="res://assets/Fonts/Raw/continuum bold.ttf" id="2_opv3l"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="3_fhgv5"]
+
+[node name="SelectLevelMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k4dil")
+theme_override_font_sizes/font_size = 50
+text = "Select Your Level"
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_opv3l")
+theme_override_font_sizes/font_size = 40
+text = "Level 1"
+script = ExtResource("3_fhgv5")
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_opv3l")
+theme_override_font_sizes/font_size = 40
+text = "Level 2"
+script = ExtResource("3_fhgv5")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/LinkButton" method="_on_pressed" binds= ["Level1"]]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/LinkButton2" method="_on_pressed" binds= ["Level2"]]

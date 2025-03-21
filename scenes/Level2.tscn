@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://bacperq063dfp"]
+[gd_scene load_steps=12 format=4 uid="uid://bacperq063dfp"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_ujlsf"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_ty7hp"]
 [ext_resource type="PackedScene" uid="uid://b8fwcykfosgej" path="res://scenes/NextLevelAreaTrigger.tscn" id="4_olxdk"]
 [ext_resource type="PackedScene" uid="uid://bvfcsfvb3y2s1" path="res://scenes/LoseAreaTrigger.tscn" id="5_amsr4"]
+[ext_resource type="Script" path="res://scenes/LoseAreaLevel2.gd" id="5_k2ye0"]
 [ext_resource type="PackedScene" uid="uid://chusb7h4hv6nq" path="res://scenes/FallingSnail.tscn" id="6_1gptv"]
 [ext_resource type="Script" path="res://scenes/Spawner.gd" id="6_k0xc2"]
 [ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="7_itcv6"]
+[ext_resource type="PackedScene" uid="uid://dxky2unspauih" path="res://scenes/Life Counter.tscn" id="9_ilu7f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwt4i"]
 texture = ExtResource("7_itcv6")
@@ -70,12 +72,18 @@ position = Vector2(-128, -58)
 
 [node name="AreaTrigger" parent="." instance=ExtResource("5_amsr4")]
 position = Vector2(-271, 390)
+script = ExtResource("5_k2ye0")
+scene_name = "Level2"
 
 [node name="AreaTrigger2" parent="." instance=ExtResource("5_amsr4")]
 position = Vector2(-1413, 390)
+script = ExtResource("5_k2ye0")
+scene_name = "Level2"
 
 [node name="AreaTrigger3" parent="." instance=ExtResource("5_amsr4")]
 position = Vector2(867, 390)
+script = ExtResource("5_k2ye0")
+scene_name = "Level2"
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(632, -566)
@@ -87,3 +95,7 @@ position = Vector2(1, 0)
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAABAAEAAwAAAAAAAAACAAEAAwAAAAAAAAADAAEAAwAAAAAAAAAEAAEAAwAEAAEAAAAFAAIAAwAEAAEAAAAGAAMAAwAEAAEAAAALAAIAAwAFAAEAAAAMAAEAAwAFAAEAAAANAAAAAwAFAAEAAAAKAAMAAwAFAAEAAAAJAAQAAwAFAAEAAAAJAP//AwAEAAEAAAAIAP7/AwAEAAEAAAAOAAAAAwAAAAAAAAAGAPz/AwAEAAEAAAADAPn/AwAEAAEAAAACAPn/AwAAAAAAAAABAPn/AwAAAAAAAAAEAPr/AwAEAAEAAAD1//n/AwAAAAAAAAD0//n/AwAAAAAAAADz//n/AwAAAAAAAAD9//n/AwAAAAAAAAD5//n/AwAAAAAAAAAIAP//AwABAAAAAAADAPr/AwABAAAAAAACAPr/AwABAAAAAAABAPr/AwABAAAAAAD9//r/AwABAAAAAAD5//r/AwABAAAAAAD1//r/AwABAAAAAAD0//r/AwABAAAAAADz//r/AwABAAAAAAAEAAIAAwABAAAAAAAEAAMAAwABAAAAAAAFAAMAAwABAAAAAAABAAIAAwABAAAAAAABAAMAAwABAAAAAAACAAIAAwABAAAAAAACAAMAAwABAAAAAAADAAMAAwABAAAAAAADAAIAAwABAAAAAAAKAAQAAwABAAAAAAALAAQAAwABAAAAAAAMAAQAAwABAAAAAAANAAQAAwABAAAAAAAOAAQAAwABAAAAAAAOAAMAAwABAAAAAAAOAAIAAwABAAAAAAAOAAEAAwABAAAAAAANAAEAAwABAAAAAAANAAIAAwABAAAAAAAMAAIAAwABAAAAAAAMAAMAAwABAAAAAAALAAMAAwABAAAAAAANAAMAAwABAAAAAAA=")
 tile_set = SubResource("TileSet_7tpbs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LifeCounter" parent="CanvasLayer" instance=ExtResource("9_ilu7f")]
